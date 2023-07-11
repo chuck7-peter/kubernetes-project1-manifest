@@ -3,13 +3,13 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
+    app: flask-demo
   name: flaskdemo
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: flaskdemo
+      app: flask-demo
   strategy: {}
   template:
     metadata:
@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: peter3636/test-app:v1
+      - image: peter3636/test-demo:v1
         name: flaskdemo
         resources: {}
 status: {}
@@ -35,4 +35,4 @@ spec:
   - port: 80
     targetPort: 5000
   selector:
-    app: flaskdemo
+    app: flask-demo
